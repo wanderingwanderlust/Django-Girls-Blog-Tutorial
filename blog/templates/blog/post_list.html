@@ -10,16 +10,14 @@
             <h1><a href="">Wandering Wanderlust</a></h1>
         </div>
 
-        <div>
-            <p>published: 31.05.2015, 7:51</p>
-            <h2><a href="">My first post</a></h2>
-            <p>to the top</p>
-        </div>
-
-        <div>
-            <p>published: 31.05.2015, 7:51</p>
-            <h2><a href="">My second post</a></h2>
-            <p>the toppermost</p>
-        </div>
+        {{ posts }}
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
+      
     </body>
 </html>
